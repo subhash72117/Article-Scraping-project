@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: article-scraping-app
+    env: docker
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: article-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: article-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: article-db
+          property: password
+
+databases:
+  - name: article-db
+    plan: free
+    databaseName: article_db
+    user: article_user 
