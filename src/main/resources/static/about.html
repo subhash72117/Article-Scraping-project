@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Scraper - About</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="about-bg">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">📰 News Scraper</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="scrape.html" class="nav-link">Scrape Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="articles.html" class="nav-link">View Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="stats.html" class="nav-link">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link active">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container about-center">
+                <div class="about-card">
+                    <div class="about-icon">📰</div>
+                    <h1>About Us</h1>
+                    <p>News Scraper is a web application that automatically collects and organizes news articles from Nature.com. Our website allows you to easily scrape, view, and analyze the latest scientific articles, making it simple to stay updated with new research and discoveries.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>News Scraper</h3>
+                    <p>Automated news article scraping from Nature.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="scrape.html">Scrape Articles</a></li>
+                        <li><a href="articles.html">View Articles</a></li>
+                        <li><a href="stats.html">Statistics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Multi-page scraping</li>
+                        <li>Article management</li>
+                        <li>Statistics tracking</li>
+                        <li>Real-time monitoring</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>subhashkushwah72117@gmail.com</p>
+                    <p>© 2025 News Scraper. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 News Scraper. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/common.js"></script>
+</body>
+
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.about-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.about-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+.about-card {
+    max-width: 520px;
+    width: 100%;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+    padding: 48px 36px 40px 36px;
+    text-align: center;
+    border: 1px solid #e3e8ee;
+    transition: box-shadow 0.2s;
+    margin: 48px 0;
+    position: relative;
+}
+.about-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.08);
+}
+.about-icon {
+    font-size: 3.2rem;
+    margin-bottom: 18px;
+    color: #007bff;
+    background: #e0e7ff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+.about-card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    color: #007bff;
+    letter-spacing: 1px;
+}
+.about-card p {
+    font-size: 1.18rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+@media (max-width: 700px) {
+    .about-card {
+        padding: 24px 10px;
+    }
+    .about-card h1 {
+        font-size: 1.5rem;
+    }
+    .about-card p {
+        font-size: 1rem;
+    }
+    .about-icon {
+        font-size: 2.2rem;
+        width: 48px;
+        height: 48px;
+    }
+}
+</style>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Scraper - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">📰 News Scraper</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scrape.html" class="nav-link">Scrape Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="articles.html" class="nav-link">View Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="stats.html" class="nav-link">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>📊 Dashboard</h1>
+                <p>Welcome to the News Scraper Dashboard. Monitor your scraping activities and view quick statistics.</p>
+            </div>
+
+            <!-- Quick Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📰</div>
+                    <div class="stat-content">
+                        <h3 id="totalArticles">0</h3>
+                        <p>Total Articles</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌐</div>
+                    <div class="stat-content">
+                        <h3 id="pagesScraped">0</h3>
+                        <p>Pages Scraped</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <h3 id="lastScraped">-</h3>
+                        <p>Last Scraped</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-content">
+                        <h3 id="status">Ready</h3>
+                        <p>System Status</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="window.location.href='scrape.html'">
+                        🔄 Start Scraping
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.location.href='articles.html'">
+                        📋 View Articles
+                    </button>
+                    <button class="btn btn-info" onclick="window.location.href='stats.html'">
+                        📊 View Statistics
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Articles Preview -->
+            <div class="recent-articles">
+                <h2>Recent Articles</h2>
+                <div class="articles-header">
+                    <button class="btn btn-sm btn-outline" onclick="loadRecentArticles()" style="margin-bottom: 10px;">
+                        🔄 Refresh Articles
+                    </button>
+                </div>
+                <div id="recentArticlesList" class="articles-preview">
+                    <p class="loading-text">Loading recent articles...</p>
+                </div>
+                <div class="view-all-link">
+                    <a href="articles.html" class="btn btn-outline">View All Articles</a>
+                </div>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="status" class="status"></div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Processing...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>News Scraper</h3>
+                <p>Automated news article scraping from Nature.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="scrape.html">Scrape Articles</a></li>
+                    <li><a href="articles.html">View Articles</a></li>
+                    <li><a href="stats.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li>Multi-page scraping</li>
+                    <li>Article management</li>
+                    <li>Statistics tracking</li>
+                    <li>Real-time monitoring</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>subhashkushwah72117@gmail.com</p>
+                <p>© 2025 News Scraper.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 News Scraper. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Scraper - Scrape Articles</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">📰 News Scraper</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scrape.html" class="nav-link active">Scrape Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="articles.html" class="nav-link">View Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="stats.html" class="nav-link">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>🔄 Scrape Articles</h1>
+                <p>Scrape news articles from Nature.com. Choose your scraping options below.</p>
+            </div>
+
+            <!-- Scraping Options -->
+            <div class="scraping-options">
+                <div class="option-card">
+                    <div class="option-header">
+                        <h3>📄 Single Page Scraping</h3>
+                        <p>Scrape articles from a specific page</p>
+                    </div>
+                    <div class="option-content">
+                        <div class="form-group">
+                            <label for="pageNumber">Page Number (1-10):</label>
+                            <input type="number" id="pageNumber" min="1" max="10" value="1">
+                        </div>
+                        <button class="btn btn-primary" onclick="scrapeSpecificPage()">
+                            🔄 Scrape This Page
+                        </button>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-header">
+                        <h3>🌐 Multi-Page Scraping</h3>
+                        <p>Scrape articles from multiple pages</p>
+                    </div>
+                    <div class="option-content">
+                        <div class="form-group">
+                            <label for="startPage">Start Page:</label>
+                            <input type="number" id="startPage" min="1" max="10" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="endPage">End Page:</label>
+                            <input type="number" id="endPage" min="1" max="10" value="3">
+                        </div>
+                        <button class="btn btn-success" onclick="scrapePageRange()">
+                            🌐 Scrape Range
+                        </button>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-header">
+                        <h3>🚀 Quick Actions</h3>
+                        <p>Common scraping operations</p>
+                    </div>
+                    <div class="option-content">
+                        <button class="btn btn-primary" onclick="scrapeArticles()">
+                            🔄 Scrape Page 1
+                        </button>
+                        <button class="btn btn-success" onclick="scrapeAllPages()">
+                            🌐 Scrape All Pages
+                        </button>
+                        <button class="btn btn-warning" onclick="scrapeLatest()">
+                            ⚡ Scrape Latest
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scraping Progress -->
+            <div class="scraping-progress" id="scrapingProgress" style="display: none;">
+                <h3>📊 Scraping Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Ready to start...</div>
+                <div class="progress-details" id="progressDetails"></div>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="status" class="status"></div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Processing...</p>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h3>📋 Recent Activity</h3>
+                <div id="activityLog" class="activity-log">
+                    <p class="no-activity">No recent activity. Start scraping to see activity here!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>News Scraper</h3>
+                <p>Automated news article scraping from Nature.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="scrape.html">Scrape Articles</a></li>
+                    <li><a href="articles.html">View Articles</a></li>
+                    <li><a href="stats.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li>Multi-page scraping</li>
+                    <li>Article management</li>
+                    <li>Statistics tracking</li>
+                    <li>Real-time monitoring</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>subhashkushwah72117@gmail.com</p>
+                <p>© 2025 News Scraper.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 News Scraper. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/scrape.js"></script>
+</body>
+</html> 

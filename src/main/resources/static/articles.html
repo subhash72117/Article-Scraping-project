@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Scraper - View Articles</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">📰 News Scraper</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scrape.html" class="nav-link">Scrape Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="articles.html" class="nav-link active">View Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="stats.html" class="nav-link">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>📋 View Articles</h1>
+                <p>Browse and manage all scraped articles from Nature.com</p>
+            </div>
+
+            <!-- Controls and Filters -->
+            <div class="articles-controls">
+                <div class="controls-left">
+                    <button class="btn btn-primary" onclick="loadArticles()">
+                        🔄 Refresh Articles
+                    </button>
+                    <button class="btn btn-info" onclick="getCount()">
+                        📊 Get Count
+                    </button>
+                </div>
+                <div class="controls-right">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="filterArticles()">
+                    </div>
+                    <select id="sortSelect" onchange="sortArticles()">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="title">Title A-Z</option>
+                        <option value="title-desc">Title Z-A</option>
+                    </select>
+                    <button class="btn btn-danger" onclick="deleteAll()">
+                        🗑️ Delete All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Article Count and Stats -->
+            <div class="articles-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total Articles:</span>
+                    <span class="stat-value" id="articleCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Showing:</span>
+                    <span class="stat-value" id="showingCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Last Updated:</span>
+                    <span class="stat-value" id="lastUpdated">-</span>
+                </div>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="status" class="status"></div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading articles...</p>
+            </div>
+
+            <!-- Articles List -->
+            <div id="articles" class="articles-list">
+                <div class="loading-placeholder">
+                    <p>Loading articles...</p>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination" style="display: none;">
+                <button class="btn btn-outline" onclick="previousPage()" id="prevBtn">← Previous</button>
+                <span class="page-info" id="pageInfo">Page 1 of 1</span>
+                <button class="btn btn-outline" onclick="nextPage()" id="nextBtn">Next →</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>News Scraper</h3>
+                <p>Automated news article scraping from Nature.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="scrape.html">Scrape Articles</a></li>
+                    <li><a href="articles.html">View Articles</a></li>
+                    <li><a href="stats.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li>Multi-page scraping</li>
+                    <li>Article management</li>
+                    <li>Statistics tracking</li>
+                    <li>Real-time monitoring</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>subhashkushwah72117@gmail.com</p>
+                <p>© 2025 News Scraper.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 News Scraper. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/articles.js"></script>
+</body>
+</html> 

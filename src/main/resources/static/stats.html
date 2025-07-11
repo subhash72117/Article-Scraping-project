@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Scraper - Statistics</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">📰 News Scraper</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scrape.html" class="nav-link">Scrape Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="articles.html" class="nav-link">View Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="stats.html" class="nav-link active">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>📊 Statistics</h1>
+                <p>Comprehensive statistics and analytics for your scraped articles</p>
+            </div>
+
+            <!-- Overview Stats -->
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-icon">📰</div>
+                    <div class="stat-content">
+                        <h3 id="totalArticles">0</h3>
+                        <p>Total Articles</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌐</div>
+                    <div class="stat-content">
+                        <h3 id="pagesScraped">0</h3>
+                        <p>Pages Scraped</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <h3 id="lastScraped">-</h3>
+                        <p>Last Scraped</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-content">
+                        <h3 id="avgPerPage">0</h3>
+                        <p>Avg/Page</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Statistics -->
+            <div class="stats-details">
+                <div class="stats-section">
+                    <h3>📈 Scraping Activity</h3>
+                    <div class="activity-chart" id="activityChart">
+                        <div class="chart-placeholder">
+                            <p>Loading activity data...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>📊 Article Distribution</h3>
+                    <div class="distribution-stats">
+                        <div class="distribution-item">
+                            <span class="label">Articles with Descriptions:</span>
+                            <span class="value" id="withDescription">0</span>
+                        </div>
+                        <div class="distribution-item">
+                            <span class="label">Articles with Authors:</span>
+                            <span class="value" id="withAuthors">0</span>
+                        </div>
+                        <div class="distribution-item">
+                            <span class="label">Articles with Links:</span>
+                            <span class="value" id="withLinks">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Information -->
+            <div class="system-info">
+                <h3>🔧 System Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Database Status:</span>
+                        <span class="info-value" id="dbStatus">Checking...</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">API Status:</span>
+                        <span class="info-value" id="apiStatus">Checking...</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Last Database Update:</span>
+                        <span class="info-value" id="lastDbUpdate">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">System Uptime:</span>
+                        <span class="info-value" id="uptime">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="stats-actions">
+                <button class="btn btn-primary" onclick="refreshStats()">
+                    🔄 Refresh Statistics
+                </button>
+                <button class="btn btn-info" onclick="getDebugInfo()">
+                    🔍 Debug Information
+                </button>
+                <button class="btn btn-secondary" onclick="exportStats()">
+                    📥 Export Data
+                </button>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="status" class="status"></div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading statistics...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>News Scraper</h3>
+                <p>Automated news article scraping from Nature.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="scrape.html">Scrape Articles</a></li>
+                    <li><a href="articles.html">View Articles</a></li>
+                    <li><a href="stats.html">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li>Multi-page scraping</li>
+                    <li>Article management</li>
+                    <li>Statistics tracking</li>
+                    <li>Real-time monitoring</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>subhashkushwah72117@gmail.com</p>
+                <p>© 2025 News Scraper.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 News Scraper. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/stats.js"></script>
+</body>
+</html> 
